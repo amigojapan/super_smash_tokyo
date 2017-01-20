@@ -1,0 +1,7 @@
+mv("camera",Input.GetAxisRaw("Horizontal")*10,Input.GetAxisRaw("Vertical")*10,Input.GetAxisRaw("Mouse Y")*50);
+rt("camera",0,Input.GetAxisRaw("Mouse X")*50,0);
+for(var i=0;i<6;i++){
+vars["dragon_body"+i].transform.Translate(0,Mathf.Sin(vars["rad"]-(i*Mathf.PI/7))/15,0);
+}
+vars["dragon_tail"].transform.Translate(0,Mathf.Sin(vars["rad"]-Mathf.PI)/15,0);
+vars["rad"]+=0.1f;
