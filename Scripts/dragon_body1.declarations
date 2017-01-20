@@ -1,0 +1,27 @@
+vars["dragon_head"]=Obj("cube25_25_24.obj","dragon_head",0,0,0);
+for(var i=0;i<6;i++){ 
+  vars["dragon_body"+i]=Obj("cube25_25_12.obj","dragon_body"+i,0,0,-13*(i+1));
+  //adding parent child relationship to be able to scale based on just one scale to retain same ratio
+  if(i==0){
+    vars["dragon_body0"].transform.parent=vars["dragon_head"].transform;
+  }else{
+    vars["dragon_body"+i].transform.parent=vars["dragon_head"].transform;
+  }
+}
+vars["dragon_tail"]=Obj("cube25_25_24.obj","dragon_tail",0,0,-13*8);
+vars["dragon_tail"].transform.parent=vars["dragon_head"].transform;
+function sc_(name : String, x : float, y : float, z : float) {//name: String, x,y,z
+IEnumreter(){
+}
+    //Scale a cube
+	//example
+	//Declarations
+	//qb("myRectangle",10,10,10);sc("myRectangle",100,10,10);
+    for (cube in cubes) {//this for loop doesnt behave as the regular browser one which woudl return the index, it acutally returns the object
+    	if(cube.transform.name==name) cube.transform.localScale = Vector3(x,y,z);
+	}
+}
+sc_("dragon_head",0.1,0.1,0.1);
+vars["dragon_y_max"]=vars["dragon_head"].transform.position.y+1;
+vars["dragon_y_min"]=vars["dragon_head"].transform.position.y-1;
+vars["rad"]=0;
