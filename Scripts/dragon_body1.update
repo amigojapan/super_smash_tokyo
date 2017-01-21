@@ -1,61 +1,77 @@
-mv("dragon_head",0,0,Input.GetAxisRaw("Vertical")*10);
+mv("dragon_head",0,0,-Input.GetAxisRaw("Vertical")*10);
 rt("dragon_head",0,Input.GetAxisRaw("Horizontal")*40,0);
-sp("camera",vars["dragon_head"].gameObject.transform.position.x-1,vars["dragon_head"].transform.position.y+7,vars["dragon_head"].transform.position.z-15);
+sp("camera",vars["dragon_head"].gameObject.transform.position.x-1,vars["dragon_head"].transform.position.y+12,vars["dragon_head"].transform.position.z-30);
+debugString=vars["dragon_head"].transform.eulerAngles.y.ToString();
 if(Input.GetKey(KeyCode.Space)){
-mv("dragon_head",0,3,0);
+    mv("dragon_head",0,3,0);
 }
 if(Input.GetKey(KeyCode.LeftShift)){
-mv("dragon_head",0,-3,0);
+    mv("dragon_head",0,-3,0);
 }
 for(var i=0;i<6;i++){
-vars["dragon_body"+i].transform.Translate(0,Mathf.Sin(vars["rad"]-(i*Mathf.PI/7))/15,0);
+    vars["dragon_body"+i].transform.Translate(0,Mathf.Sin(vars["rad"]-(i*Mathf.PI/7))/15,0);
 }
-vars["dragon_tail"].transform.Translate(0,Mathf.Sin(vars["rad"]-Mathf.PI)/15,0);
-//for(var j=0;j<36;j++){
-//vars["dragon_fire"+j].transform.Translate(j*Mathf.Sin(vars["rad"]-(j*Mathf.PI/12))/20,0,0);
-//}
-if(Input.GetKey(KeyCode.P)){   
- //0.1秒ごとに処理
-  if(vars["time"]>=0.1){
-//ブレスの最初のボクセルのとき
-    if(vars["breathCount"]==0){   vars["Fire"+vars["breathCount"]]=qb("fire"+vars["breathCount"],vars["dragon_head"].transform.position.x,vars["dragon_head"].transform.position.y,vars["dragon_head"].transform.position.z+13);
-//ブレスのボクセルが2個目以降の時
-    }else{
-       for(var k=0;k<vars["breathCount"];k++){
-        //debugString=vars["breathCount"].ToStirng();
-        vars["Fire"+k.ToString()].transform.Translate(0,0,1);
-        //mv("fire"+k.ToString(),0,0,1);
-      }
-vars["Fire"+vars["breathCount"]]=qb("fire"+vars["breathCount"],vars["dragon_head"].transform.position.x+(4*Mathf.Sin(vars["breathCount"]%8*2*Mathf.PI/8)),vars["dragon_head"].transform.position.y,vars["dragon_head"].transform.position.z+13);
+//Pが押されたとき
+if (Input.GetKey(KeyCode.P)) {
+    debugString = vars["time"].ToString();
+    //0.1秒ごとに処理
+    if (vars["time"] >= 0.1) {
+        debugString = "herez2";
+        //ブレスの最初のボクセルのとき
+        if (vars["breathCount"] == 0) {
+            vars["Fire" + vars["breathCount"]] = qb("fire" + vars["breathCount"], vars["BreathOrigine"].transform.position.x, vars["BreathOrigine"].transform.position.y, vars["BreathOrigine"].transform.position.z);
+            var x = UnityEngine.Random.Range(0, 2);
+            debugString = "herez3";
+            //xが1以下の時
+            if (x < 1) {
+                cl("fire" + vars["breathCount"], new Color32(246, 243, 55,255));
+                //Xが1以上の時
+            } else {
+                cl("fire" + vars["breathCount"], new Color32(173, 78, 26, 255));
+            }
+            debugString = "herez4";
 
-}
-      vars["breathCount"]=vars["breathCount"]+1;
-      vars["time"]=0;
-    
-/*
-    vars["breathCount"]=vars["breathCount"]+1;     vars["Fire"+vars["breathCount"]]=qb("fire"+vars["breathCount"],vars["dragon_head"].transform.position.x,vars["dragon_head"].transform.position.y,vars["dragon_head"].transform.position.z+10);
-vars["Fire"+vars["breathCount"]].transform.parent=vars["dragon_head"].transform;
-    vars["time"]=0;
-*/  
-}
-  vars["time"]+=Time.deltaTime;
-debugString=vars["breathCount"].ToString();
-}
-else{
-for(var l=0;l<vars["breathCount"];l++){
- vars["Fire"+l.ToString()].transform.Translate(0,0,0.5);
-} 
-}
-/* if(vars["time"]>=0.1){
-    for(var l=0;l<vars["breathCount"];l++){ 
-      vars["Fire"+l.ToString()].transform.Translate(0,0,0.5);
-      if(Vector3.sqrMagnitude(vars["Fire"+l.ToString()].transform.position,vars["dragon_head"].transform.posiiton)>=100)
-UnityEngine.Object.destroy(vars["Fire"+l.ToString()]);
+            vars["breathCount"] = vars["breathCount"] + 1;
+            //ブレスのボクセルが2個目以降の時
+        } else {
+            for (var k = 0; k < vars["breathCount"]; k++) {
+                vars["Fire" + k.ToString()].transform.Translate(-Mathf.Sin(Mathf.Deg2Rad * (vars["dragon_head"].transform.eulerAngles.y)), 0, -Mathf.Cos(Mathf.Deg2Rad * (vars["dragon_head"].transform.eulerAngles.y)));
+                debugString = "herez5";
+                if (cd("fire" + k.ToString(), "TT")) {
+                    dl("fire" + k.ToString());
+                }
+                if (ex("fire" + vars["breathCount"])) {
+                    dl("fire" + vars["breathCount"]);
+                }
+                vars["Fire" + vars["breathCount"]] = qb("fire" + vars["breathCount"], vars["BreathOrigine"].transform.position.x + (4 * Mathf.Sin(vars["breathCount"] % 8 * 2 * Mathf.PI / 8)), vars["BreathOrigine"].transform.position.y, vars["BreathOrigine"].transform.position.z);
+                debugString = "herez6";
+                var y = UnityEngine.Random.Range(0, 2);
+                if (y < 1) {
+                    cl("fire" + vars["breathCount"], new Color32(246, 243, 55, 255));
+                } else {
+                    cl("fire" + vars["breathCount"], new Color32(173, 78, 26, 255));
+                }
+            }
+            //二週目ここまで
+            
+            debugString = "herez6";
+            vars["breathCount"] = vars["breathCount"] + 1;
+            if (vars["breathCount"] >= 50) {
+                vars["breathCount"] = 0;
+            }
+            
+            debugString = "herez7";
+            vars["time"] = 0;
+        }//0.1秒たっていたときここまで
     }
-  }
-  else{
-      vars["time"]=0;
-  }
+    vars["time"] += Time.deltaTime;
+        
+    //debugString = "herez8";
+
+}//Pが押されていたときここまで
+else {
+    for (var l = 0; l < vars["breathCount"]; l++) {
+        vars["Fire" + l.ToString()].transform.Translate(-Mathf.Sin(Mathf.Deg2Rad * (vars["dragon_head"].transform.eulerAngles.y)), 0, -Mathf.Cos(Mathf.Deg2Rad * (vars["dragon_head"].transform.eulerAngles.y)));
+    }
 }
-*/
-vars["rad"]+=0.1f
+vars["rad"]=vars["rad"]+0.3;
