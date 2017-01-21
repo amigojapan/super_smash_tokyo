@@ -1,9 +1,6 @@
 mv("dragon_head",0,0,Input.GetAxisRaw("Vertical")*10);
 rt("dragon_head",0,Input.GetAxisRaw("Horizontal")*40,0);
-//if(vars["cameraTopVeiw"]){
-sp("camera",vars["dragon_head"].gameObject.transform.position.x-1,vars["dragon_head"].transform.position.y+7,vars["dr}//}else{
-
-agon_head"].transform.position.z-15);
+sp("camera",vars["dragon_head"].gameObject.transform.position.x-1,vars["dragon_head"].transform.position.y+7,vars["dragon_head"].transform.position.z-15);
 if(Input.GetKey(KeyCode.Space)){
 mv("dragon_head",0,3,0);
 }
@@ -17,7 +14,6 @@ vars["dragon_tail"].transform.Translate(0,Mathf.Sin(vars["rad"]-Mathf.PI)/15,0);
 //for(var j=0;j<36;j++){
 //vars["dragon_fire"+j].transform.Translate(j*Mathf.Sin(vars["rad"]-(j*Mathf.PI/12))/20,0,0);
 //}
-
 if(Input.GetKey(KeyCode.P)){   
  //0.1秒ごとに処理
   if(vars["time"]>=0.1){
