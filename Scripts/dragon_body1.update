@@ -4,4 +4,18 @@ for(var i=0;i<6;i++){
 vars["dragon_body"+i].transform.Translate(0,Mathf.Sin(vars["rad"]-(i*Mathf.PI/7))/15,0);
 }
 vars["dragon_tail"].transform.Translate(0,Mathf.Sin(vars["rad"]-Mathf.PI)/15,0);
-vars["rad"]+=0.1f;
+for(var j=0;j<36;j++){
+vars["dragon_fire"+j].transform.Translate(j*Mathf.Sin(vars["rad"]-(j*Mathf.PI/12))/20,0,0);
+}
+/*function Bress(){
+for(var i=0;i<36;i++){
+    vars["dragon_fire"+i]=qb("fire"+i,vars["dragon_head"].transform.position.x,vars["dragon_head"].transform.position.y,vars["  dragon_head"].transform.position.z+i);
+    vars["dragon_fire"+i].transform.parent=vars["dragon_head"].transfrom;
+    yield new WaitForSeconds(0.1);
+  }
+}
+if(Input.GetKeyDown(KeyCode.Space)){
+  Bress();
+}
+*/
+vars["rad"]+=0.1f

@@ -1,3 +1,4 @@
+//for dragon===============================
 vars["dragon_head"]=Obj("cube25_25_24.obj","dragon_head",0,0,0);
 for(var i=0;i<6;i++){ 
   vars["dragon_body"+i]=Obj("cube25_25_12.obj","dragon_body"+i,0,0,-13*(i+1));
@@ -11,8 +12,6 @@ for(var i=0;i<6;i++){
 vars["dragon_tail"]=Obj("cube25_25_24.obj","dragon_tail",0,0,-13*8);
 vars["dragon_tail"].transform.parent=vars["dragon_head"].transform;
 function sc_(name : String, x : float, y : float, z : float) {//name: String, x,y,z
-IEnumreter(){
-}
     //Scale a cube
 	//example
 	//Declarations
@@ -21,7 +20,15 @@ IEnumreter(){
     	if(cube.transform.name==name) cube.transform.localScale = Vector3(x,y,z);
 	}
 }
-sc_("dragon_head",0.1,0.1,0.1);
 vars["dragon_y_max"]=vars["dragon_head"].transform.position.y+1;
 vars["dragon_y_min"]=vars["dragon_head"].transform.position.y-1;
 vars["rad"]=0;
+//
+//function bress(){
+for(var j=0;j<36;j++){
+vars["dragon_fire"+j]=qb("fire"+j,vars["dragon_head"].transform.position.x,vars["dragon_head"].transform.position.y,vars["dragon_head"].transform.position.z+j);
+vars["dragon_fire"+j].transform.parent=vars["dragon_head"].transfrom;
+}
+
+//===========================================
+sc_("dragon_head",0.1,0.1,0.1);
