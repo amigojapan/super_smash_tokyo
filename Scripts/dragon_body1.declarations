@@ -11,7 +11,7 @@ for(var i=0;i<6;i++){
     vars["dragon_body"+i].transform.parent=vars["dragon_head"].transform;
   }
 }
-Obj("TokyoTower3.obj","TT",0,0,20);
+vars["TokyoTower"]=Obj("TokyoTower3.obj","TT",0,0,20);
 vars["dragon_tail"]=Obj("DragonTail.obj","dragon_tail",0,0,-13*8);
 vars["dragon_tail"].transform.Rotate(0,180,0);
 vars["dragon_tail"].transform.parent=vars["dragon_head"].transform;
@@ -31,16 +31,22 @@ vars["rad"]=0;
 //===========================================
 sc_("dragon_head",0.1,0.1,0.1);
 class breath{
-  function Breath(value : GameObject,value1 : int){
-    if(value1>=0&&value1<12){
-      value.transform.Translate(Mathf.cos(value1*Mathf.PI/12)/2,0,0);
-    }if(value1>=12&&value1<24){
-      value.transform.Translate(Mathf.cos(value1*Mathf.PI/12),0,0);
-    }if(value1>=24&&value1<36){ 
-      value.transform.Translate(Mathf.cos(3*value1*Mathf.PI/12)/2,0,0);
-    }
-  }
+ var x=0;
+ var y=0;
+ var z=0;
+ function breath(){
+ }
+ function breath(name:String,x_:float,y_:float ,z_:float ){
+  var x=x_;
+  var y=y_;
+  var z=z_;   vars[name]=qb(name+"_",vars["BreathOrigine"].transform.position.x,vars["BreathOrigine"].transform.position.y,vars["BreathOrigine"].transform.position.z);
+ }
 }
 vars["breath_"]=new breath();
 vars["breathCount"]=0;
 vars["time"]=0;
+vars["BreathOrigine"]=qb("BreathOrigine",vars["dragon_head"].transform.position.x,vars["dragon_head"].transform.position.y,vars["dragon_head"].transform.position.z+10);
+vars["BreathOrigine"].transform.parent=vars["dragon_head"].transform;
+cl("BreathOrigine",new Color(0,0,0,0));
+vars["TTHP"]=10;
+vars["TTBreak"]=false;
