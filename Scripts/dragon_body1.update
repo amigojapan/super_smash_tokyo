@@ -1,21 +1,65 @@
-mv("camera",Input.GetAxisRaw("Horizontal")*10,Input.GetAxisRaw("Vertical")*10,Input.GetAxisRaw("Mouse Y")*50);
-rt("camera",0,Input.GetAxisRaw("Mouse X")*50,0);
+mv("dragon_head",0,0,Input.GetAxisRaw("Vertical")*10);
+rt("dragon_head",0,Input.GetAxisRaw("Horizontal")*40,0);
+//if(vars["cameraTopVeiw"]){
+sp("camera",vars["dragon_head"].gameObject.transform.position.x-1,vars["dragon_head"].transform.position.y+7,vars["dr}//}else{
+
+agon_head"].transform.position.z-15);
+if(Input.GetKey(KeyCode.Space)){
+mv("dragon_head",0,3,0);
+}
+if(Input.GetKey(KeyCode.LeftShift)){
+mv("dragon_head",0,-3,0);
+}
 for(var i=0;i<6;i++){
 vars["dragon_body"+i].transform.Translate(0,Mathf.Sin(vars["rad"]-(i*Mathf.PI/7))/15,0);
 }
 vars["dragon_tail"].transform.Translate(0,Mathf.Sin(vars["rad"]-Mathf.PI)/15,0);
-for(var j=0;j<36;j++){
-vars["dragon_fire"+j].transform.Translate(j*Mathf.Sin(vars["rad"]-(j*Mathf.PI/12))/20,0,0);
+//for(var j=0;j<36;j++){
+//vars["dragon_fire"+j].transform.Translate(j*Mathf.Sin(vars["rad"]-(j*Mathf.PI/12))/20,0,0);
+//}
+
+if(Input.GetKey(KeyCode.P)){   
+ //0.1秒ごとに処理
+  if(vars["time"]>=0.1){
+//ブレスの最初のボクセルのとき
+    if(vars["breathCount"]==0){   vars["Fire"+vars["breathCount"]]=qb("fire"+vars["breathCount"],vars["dragon_head"].transform.position.x,vars["dragon_head"].transform.position.y,vars["dragon_head"].transform.position.z+13);
+//ブレスのボクセルが2個目以降の時
+    }else{
+       for(var k=0;k<vars["breathCount"];k++){
+        //debugString=vars["breathCount"].ToStirng();
+        vars["Fire"+k.ToString()].transform.Translate(0,0,1);
+        //mv("fire"+k.ToString(),0,0,1);
+      }
+vars["Fire"+vars["breathCount"]]=qb("fire"+vars["breathCount"],vars["dragon_head"].transform.position.x+(4*Mathf.Sin(vars["breathCount"]%8*2*Mathf.PI/8)),vars["dragon_head"].transform.position.y,vars["dragon_head"].transform.position.z+13);
+
 }
-/*function Bress(){
-for(var i=0;i<36;i++){
-    vars["dragon_fire"+i]=qb("fire"+i,vars["dragon_head"].transform.position.x,vars["dragon_head"].transform.position.y,vars["  dragon_head"].transform.position.z+i);
-    vars["dragon_fire"+i].transform.parent=vars["dragon_head"].transfrom;
-    yield new WaitForSeconds(0.1);
+      vars["breathCount"]=vars["breathCount"]+1;
+      vars["time"]=0;
+    
+/*
+    vars["breathCount"]=vars["breathCount"]+1;     vars["Fire"+vars["breathCount"]]=qb("fire"+vars["breathCount"],vars["dragon_head"].transform.position.x,vars["dragon_head"].transform.position.y,vars["dragon_head"].transform.position.z+10);
+vars["Fire"+vars["breathCount"]].transform.parent=vars["dragon_head"].transform;
+    vars["time"]=0;
+*/  
+}
+  vars["time"]+=Time.deltaTime;
+debugString=vars["breathCount"].ToString();
+}
+else{
+for(var l=0;l<vars["breathCount"];l++){
+ vars["Fire"+l.ToString()].transform.Translate(0,0,0.5);
+} 
+}
+/* if(vars["time"]>=0.1){
+    for(var l=0;l<vars["breathCount"];l++){ 
+      vars["Fire"+l.ToString()].transform.Translate(0,0,0.5);
+      if(Vector3.sqrMagnitude(vars["Fire"+l.ToString()].transform.position,vars["dragon_head"].transform.posiiton)>=100)
+UnityEngine.Object.destroy(vars["Fire"+l.ToString()]);
+    }
   }
-}
-if(Input.GetKeyDown(KeyCode.Space)){
-  Bress();
+  else{
+      vars["time"]=0;
+  }
 }
 */
 vars["rad"]+=0.1f
