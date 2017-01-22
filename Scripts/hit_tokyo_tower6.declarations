@@ -1,4 +1,4 @@
-//for dragon===============================
+vars["TT_SDC"]=30;
 vars["dragon_head"]=Obj("DragonHead5.obj","dragon_head",0,0,0);
 vars["dragon_head"].transform.Rotate(0,180,0);
 for(var i=0;i<6;i++){ 
@@ -7,7 +7,8 @@ for(var i=0;i<6;i++){
   //adding parent child relationship to be able to scale based on just one scale to retain same ratio
   if(i==0){
     vars["dragon_body0"].transform.parent=vars["dragon_head"].transform;
-  }else{
+  }
+else{
     vars["dragon_body"+i].transform.parent=vars["dragon_head"].transform;
   }
 }

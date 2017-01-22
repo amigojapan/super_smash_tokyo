@@ -36,9 +36,14 @@ if (Input.GetKey(KeyCode.P)) {
         } else {
             for (var k = 0; k < vars["breathCount"]; k++) {
                 vars["Fire" + k.ToString()].transform.Translate(-Mathf.Sin(Mathf.Deg2Rad * (vars["dragon_head"].transform.eulerAngles.y)), 0, -Mathf.Cos(Mathf.Deg2Rad * (vars["dragon_head"].transform.eulerAngles.y)));
-                debugString = "herez5";
+                debugString = "fire" + k.ToString();
                 if (cd("fire" + k.ToString(), "TT")) {
-                    dl("fire" + k.ToString());
+                  if(vars["TT_SDC"]>=0) {
+                    vars["TT_SDC"]=vars["TT_SDC"]-1;
+                  }
+                  //Shaking things up when hit
+                  mv("TT",Mathf.Round(3*UnityEngine.Random.Range(-1,2)),0,0);
+                  an("TT",Mathf.Round(3*UnityEngine.Random.Range(-1,2)),0,0);
                 }
                 if (ex("fire" + vars["breathCount"])) {
                     dl("fire" + vars["breathCount"]);
@@ -75,3 +80,19 @@ else {
     }
 }
 vars["rad"]=vars["rad"]+0.3;
+
+if(vars["TT_SDC"]<=0) {
+	vars["TT_SDC"]=vars["TT_SDC"]-1;
+	//explosion
+	for(var xx=0; xx< vars["TokyoTower"].gameObject.transform.childCount; xx++) {
+		vars["myobj"] = vars["TokyoTower"].gameObject.transform.GetChild(xx);
+		vars["myobj"].gameObject.transform.Translate(UnityEngine.Random.Range(-7.0f,7.0),UnityEngine.Random.Range(-7.0f,7.0),UnityEngine.Random.Range(-7.0f,7.0));
+		debugString = vars["TT_SDC"].ToString();
+		if(vars["TT_SDC"]<-20) {
+			dl("TT");
+			//UnityEngine.Object.Destroy(vars["myobj"].gameObject);
+		}
+	}
+}
+
+

@@ -1,0 +1,153 @@
+//TOKYO-TOWER-GRASS
+Obj("sst_TokyoTower4.obj","tower",0,0,0);
+Obj("sstmixbiggrass1.obj","biggrass1",0,0,0);
+Obj("sstmixbiggrass1.obj","biggrass1",12,0,0);
+Obj("sstmixbiggrass1.obj","biggrass1",12,0,12);
+Obj("sstmixbiggrass1.obj","biggrass1",12,0,-12);
+Obj("sstmixbiggrass1.obj","biggrass1",-12,0,0);
+Obj("sstmixbiggrass1.obj","biggrass1",-12,0,-12);
+Obj("sstmixbiggrass1.obj","biggrass1",0,0,12);
+Obj("sstmixbiggrass1.obj","biggrass1",0,0,-12);
+Obj("sstmixbiggrass1.obj","biggrass1",-12,0,12);
+
+//ROADS-TOKYO-TOWER
+Obj("sstroad1.obj","road1",-24,0,0);
+Obj("sstroad1.obj","road1",-24,0,12);
+Obj("sstroad1.obj","road1",-24,0,-12);
+
+Obj("sstcrossroad1.obj","cross1",-24,0,24);
+
+Obj("sstroad1.obj","road1",23,0,0);
+Obj("sstroad1.obj","road1",23,0,12);
+Obj("sstroad1.obj","road1",23,0,-12);
+
+Obj("sstcrossroad1.obj","cross1",23,0,-24);
+
+Obj("sstroad1.obj","road2",0,0,24);
+Obj("sstroad1.obj","road2",12,0,24);
+Obj("sstroad1.obj","road2",-12,0,24);
+
+Obj("sstcrossroad1.obj","cross1",23,0,24);
+
+Obj("sstroad1.obj","road2",0,0,-24);
+Obj("sstroad1.obj","road2",12,0,-24);
+Obj("sstroad1.obj","road2",-12,0,-24);
+
+Obj("sstcrossroad1.obj","cross1",-24,0,-24);
+
+Obj("sstroad1.obj","road1",-24,0,36);
+Obj("sstcrossroad1.obj","cross1",-24,0,48);
+
+//HOUSE-RED-RIVER
+Obj("new_House_red1.obj","housered1",-4,0,40);
+Obj("sstmixbiggrass1.obj","biggrass1",-12,0,36);
+Obj("sstmixbiggrass1.obj","biggrass1",-12,0,48);
+Obj("sstmixbiggrass1.obj","biggrass1",0,0,36);
+Obj("sstmixbiggrass1.obj","biggrass1",0,0,48);
+Obj("sstbgrass1.obj","grass1",6,0,53);
+Obj("sstdgrass1.obj","grass1",6,0,52);
+Obj("sstdgrass1.obj","grass1",6,0,51);
+Obj("sstbgrass1.obj","grass1",6,0,50);
+Obj("sstdgrass1.obj","grass1",6,0,49);
+Obj("sstdgrass1.obj","grass1",6,0,48);
+Obj("sstbgrass1.obj","grass1",6,0,47);
+Obj("sstbgrass1.obj","grass1",6,0,46);
+Obj("sstdgrass1.obj","grass1",6,0,45);
+Obj("sstbgrass1.obj","grass1",6,0,44);
+Obj("sstdgrass1.obj","grass1",6,0,43);
+Obj("sstdgrass1.obj","grass1",6,0,42);
+Obj("sstbgrass1.obj","grass1",6,0,41);
+Obj("sstdgrass1.obj","grass1",6,0,40);
+Obj("sstdgrass1.obj","grass1",6,0,39);
+Obj("sstbgrass1.obj","grass1",6,0,38);
+Obj("sstdgrass1.obj","grass1",6,0,37);
+Obj("sstbgrass1.obj","grass1",6,0,36);
+Obj("sstbgrass1.obj","grass1",6,0,35);
+Obj("sstdgrass1.obj","grass1",6,0,34);
+Obj("sstbgrass1.obj","grass1",6,0,33);
+Obj("sstdgrass1.obj","grass1",6,0,32);
+Obj("sstdgrass1.obj","grass1",6,0,31);
+Obj("sstbgrass1.obj","grass1",6,0,30);
+
+
+
+//HIGHTOWER
+Obj("Hightower_A.obj","hightower1",-37,0,0);
+Obj("tree1.obj","tree1",-37,0,12);
+Obj("sstmixbiggrass1.obj","biggrass1",-35,0,12);
+Obj("tree1.obj","tree1",-37,0,-12);
+Obj("sstmixbiggrass1.obj","biggrass1",-35,0,-12);
+Obj("tree1.obj","tree1",-37,0,-24);
+Obj("sstmixbiggrass1.obj","biggrass1",-35,0,-24);
+Obj("tree1.obj","tree1",-37,0,24);
+Obj("sstmixbiggrass1.obj","biggrass1",-35,0,24);
+Obj("tree1.obj","tree1",-37,0,36);
+Obj("sstmixbiggrass1.obj","biggrass1",-35,0,36);
+
+//RIVER
+
+Obj("sstcrossroad1.obj","cross1",-36,0,48);
+
+Obj("sstriver1.obj","river1",-36,0,59);
+Obj("sstriver1.obj","river1",-24,0,59);
+Obj("sstriver1.obj","river1",-12,0,59);
+Obj("sstriver1.obj","river1",0,0,59);
+Obj("sstriver1.obj","river1",12,0,59);
+Obj("sstriver1.obj","river1",12,0,47);
+Obj("sstriver1.obj","river1",12,0,35);
+Obj("sstriver1.obj","river1",24,0,35);
+Obj("sstriver1.obj","river1",36,0,35);
+Obj("sstriver1.obj","river1",48,0,35);
+Obj("sstriver1.obj","river1",60,0,35);
+
+Obj("sstcrossroad1.obj","cross1",-36,0,71);
+Obj("sstmixbiggrass1.obj","biggrass1",-35,0,83);
+
+//TREES-SENSOUJI
+Obj("sstcrossroad1.obj","cross1",24,0,48);
+Obj("sstcrossroad1.obj","cross1",24,0,60);
+Obj("tree1.obj","tree1",36,0,59);
+Obj("tree1.obj","tree1",36,0,47);
+
+
+//NEW-HOUSE-RED-BLUE-LEFT
+Obj("new_House_red1.obj","housered1",-34,0,95);
+Obj("new_House_blue1.obj","houseblue1",-12,0,95);
+
+//SENSOUJI
+Obj("Senouzi.obj","sensouji1",22,11,95);
+
+//NEW-HOUSE-RED-BLUE-RIGHT
+Obj("new_House_red1.obj","housered1",60,0,95);
+Obj("new_House_blue1.obj","houseblue1",60,0,70);
+
+//SKYTREE
+Obj("skytree3.obj","skytree1",60,0,50);
+
+//HIGHTOWER-A-B
+Obj("Hightower_A.obj","hightower1",60,0,20);
+Obj("Hightower_B.obj","hightower2",60,0,0);
+Obj("Hightower_A.obj","hightower1",60,0,-20);
+Obj("Hightower_B.obj","hightower1",40,0,20);
+Obj("Hightower_A.obj","hightower1",40,0,0);
+Obj("Hightower_B.obj","hightower1",40,0,-20);
+
+an("road2",0,90,0);
+
+//Space travel
+function big_asteroid(name,x,y,z,color) {
+    qb(name,x,y,z);
+    qb(name,x-1,y,z);
+    qb(name,x,y-1,z);
+    qb(name,x,y,z-1);
+    qb(name,x+1,y,z);
+    qb(name,x,y+1,z);
+    qb(name,x,y,z+1);
+    cl(name, color);
+}
+//Asteroids
+//big_asteroid("Asteroid0",7,7,7, Color.red);
+//big_asteroid("Asteroid1",-7,-7,-7, Color.blue);
+//big_asteroid("Asteroid2",14,14,14, Color.green);
+//big_asteroid("Asteroid3",-14,-14,-14, Color.yellow);
+

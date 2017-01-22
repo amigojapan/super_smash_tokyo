@@ -1,0 +1,9 @@
+for(var x=0; x< vars["ttobj"].gameObject.transform.childCount; x++) {
+  vars["myobj"] = vars["ttobj"].gameObject.transform.GetChild(x);
+  vars["counter"]=vars["counter"]+1; vars["myobj"].gameObject.transform.Translate(UnityEngine.Random.Range(-7.0f,7.0),UnityEngine.Random.Range(-7.0f,7.0),UnityEngine.Random.Range(-7.0f,7.0));
+  debugString = vars["counter"].ToString();
+  if(vars["counter"]>1000) {
+    UnityEngine.Object.Destroy(vars["myobj"].gameObject);
+  }
+ //debugString =vars["myobj"].name;
+}

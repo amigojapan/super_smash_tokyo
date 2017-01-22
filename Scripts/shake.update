@@ -1,0 +1,4 @@
+//vars["myobj"].gameObject.transform.Translate(UnityEngine.Random.Range(-1,1),UnityEngine.Random.Range(-1,1),UnityEngine.Random.Range(-1,1));
+mv("tt",Mathf.Round(3*UnityEngine.Random.Range(-1,2)),0,0);
+an("tt",Mathf.Round(3*UnityEngine.Random.Range(-1,2)),0,0);
+ //debugString =vars["myobj"].name;

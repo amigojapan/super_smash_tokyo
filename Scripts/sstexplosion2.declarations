@@ -1,0 +1,3 @@
+vars["ttobj"]=Obj("sst_TokyoTower4.obj","tt",0,0,100);
+//debugString =vars["ttobj"].gameObject.transform.childCount.ToString();
+vars["counter"]=0;
