@@ -1,0 +1,53 @@
+vars["TT_SDC"]=30;
+vars["dragon_head"]=Obj("DragonHead5.obj","dragon_head",0,0,0);
+vars["dragon_head"].transform.Rotate(0,180,0);
+for(var i=0;i<6;i++){ 
+  vars["dragon_body"+i]=Obj("DragonTrunk2.obj","dragon_body"+i,0,-5,-13*(i+1));
+  vars["dragon_body"+i].transform.Rotate(0,180,0);
+  //adding parent child relationship to be able to scale based on just one scale to retain same ratio
+  if(i==0){
+    vars["dragon_body0"].transform.parent=vars["dragon_head"].transform;
+  }
+else{
+    vars["dragon_body"+i].transform.parent=vars["dragon_head"].transform;
+  }
+}
+vars["TokyoTower"]=Obj("TokyoTower3.obj","TT",0,0,20);
+vars["dragon_tail"]=Obj("DragonTail.obj","dragon_tail",0,0,-13*8);
+vars["dragon_tail"].transform.Rotate(0,180,0);
+vars["dragon_tail"].transform.parent=vars["dragon_head"].transform;
+function sc_(name : String, x : float, y : float, z : float) {//name: String, x,y,z
+    //Scale a cube
+	//example
+	//Declarations
+	//qb("myRectangle",10,10,10);sc("myRectangle",100,10,10);
+    for (cube in cubes) {//this for loop doesnt behave as the regular browser one which woudl return the index, it acutally returns the object
+    	if(cube.transform.name==name) cube.transform.localScale = Vector3(x,y,z);
+	}
+}
+vars["dragon_y_max"]=vars["dragon_head"].transform.position.y+1;
+vars["dragon_y_min"]=vars["dragon_head"].transform.position.y-1;
+vars["rad"]=0;
+
+//===========================================
+sc_("dragon_head",0.1,0.1,0.1);
+class breath{
+ var x=0;
+ var y=0;
+ var z=0;
+ function breath(){
+ }
+ function breath(name:String,x_:float,y_:float ,z_:float ){
+  var x=x_;
+  var y=y_;
+  var z=z_;   vars[name]=qb(name+"_",vars["BreathOrigine"].transform.position.x,vars["BreathOrigine"].transform.position.y,vars["BreathOrigine"].transform.position.z);
+ }
+}
+vars["breath_"]=new breath();
+vars["breathCount"]=0;
+vars["time"]=0;
+vars["BreathOrigine"]=qb("BreathOrigine",vars["dragon_head"].transform.position.x,vars["dragon_head"].transform.position.y,vars["dragon_head"].transform.position.z+10);
+vars["BreathOrigine"].transform.parent=vars["dragon_head"].transform;
+cl("BreathOrigine",new Color(0,0,0,0));
+vars["TTHP"]=10;
+vars["TTBreak"]=false;
