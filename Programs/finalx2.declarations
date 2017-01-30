@@ -1,0 +1,286 @@
+//TOKYO-TOWER-GRASS
+vars["TT_SDC"]=30;
+vars["TokyoTower"]=Obj("sst_TokyoTower4.obj","TT",0,0,0);
+//vars["TT"]=Obj("sst_TokyoTower4.obj","TT",0,0,0);
+
+//SENSOUJI
+vars["SS_SDC"]=30;
+vars["Sen"]=Obj("Senouzi.obj","SS",22,11,95);
+
+Obj("sstmixbiggrass1.obj","biggrass1",0,0,0);
+Obj("sstmixbiggrass1.obj","biggrass1",12,0,0);
+Obj("sstmixbiggrass1.obj","biggrass1",12,0,12);
+Obj("sstmixbiggrass1.obj","biggrass1",12,0,-12);
+Obj("sstmixbiggrass1.obj","biggrass1",-12,0,0);
+Obj("sstmixbiggrass1.obj","biggrass1",-12,0,-12);
+Obj("sstmixbiggrass1.obj","biggrass1",0,0,12);
+Obj("sstmixbiggrass1.obj","biggrass1",0,0,-12);
+Obj("sstmixbiggrass1.obj","biggrass1",-12,0,12);
+
+//ROADS-TOKYO-TOWER
+Obj("sstroad1.obj","road1",-24,0,0);
+Obj("sstroad1.obj","road1",-24,0,12);
+Obj("sstroad1.obj","road1",-24,0,-12);
+
+Obj("sstcrossroad1.obj","cross1",-24,0,24);
+
+Obj("sstroad1.obj","road1",23,0,0);
+Obj("sstroad1.obj","road1",23,0,12);
+Obj("sstroad1.obj","road1",23,0,-12);
+
+Obj("sstcrossroad1.obj","cross1",23,0,-24);
+
+Obj("sstroad1.obj","road2",0,0,24);
+Obj("sstroad1.obj","road2",12,0,24);
+Obj("sstroad1.obj","road2",-12,0,24);
+
+Obj("sstcrossroad1.obj","cross1",23,0,24);
+
+Obj("sstroad1.obj","road2",0,0,-24);
+Obj("sstroad1.obj","road2",12,0,-24);
+Obj("sstroad1.obj","road2",-12,0,-24);
+
+Obj("sstcrossroad1.obj","cross1",-24,0,-24);
+
+Obj("sstroad1.obj","road1",-24,0,36);
+Obj("sstcrossroad1.obj","cross1",-24,0,48);
+
+//HOUSE-RED-RIVER
+vars["H1_SDC"]=30;
+vars["Hou"]=Obj("new_House_red1.obj","H1",-4,0,40);
+Obj("sstmixbiggrass1.obj","biggrass1",-12,0,36);
+Obj("sstmixbiggrass1.obj","biggrass1",-12,0,48);
+Obj("sstmixbiggrass1.obj","biggrass1",0,0,36);
+Obj("sstmixbiggrass1.obj","biggrass1",0,0,48);
+Obj("sstbgrass1.obj","grass1",6,0,53);
+Obj("sstdgrass1.obj","grass1",6,0,52);
+Obj("sstdgrass1.obj","grass1",6,0,51);
+Obj("sstbgrass1.obj","grass1",6,0,50);
+Obj("sstdgrass1.obj","grass1",6,0,49);
+Obj("sstdgrass1.obj","grass1",6,0,48);
+Obj("sstbgrass1.obj","grass1",6,0,47);
+Obj("sstbgrass1.obj","grass1",6,0,46);
+Obj("sstdgrass1.obj","grass1",6,0,45);
+Obj("sstbgrass1.obj","grass1",6,0,44);
+Obj("sstdgrass1.obj","grass1",6,0,43);
+Obj("sstdgrass1.obj","grass1",6,0,42);
+Obj("sstbgrass1.obj","grass1",6,0,41);
+Obj("sstdgrass1.obj","grass1",6,0,40);
+Obj("sstdgrass1.obj","grass1",6,0,39);
+Obj("sstbgrass1.obj","grass1",6,0,38);
+Obj("sstdgrass1.obj","grass1",6,0,37);
+Obj("sstbgrass1.obj","grass1",6,0,36);
+Obj("sstbgrass1.obj","grass1",6,0,35);
+Obj("sstdgrass1.obj","grass1",6,0,34);
+Obj("sstbgrass1.obj","grass1",6,0,33);
+Obj("sstdgrass1.obj","grass1",6,0,32);
+Obj("sstdgrass1.obj","grass1",6,0,31);
+Obj("sstbgrass1.obj","grass1",6,0,30);
+
+
+
+//HIGHTOWER
+Obj("Hightower_A.obj","hightower1",-37,0,0);
+Obj("tree1.obj","tree1",-37,0,12);
+Obj("sstmixbiggrass1.obj","biggrass1",-35,0,12);
+Obj("tree1.obj","tree2",-37,0,-12);
+Obj("sstmixbiggrass1.obj","biggrass1",-35,0,-12);
+Obj("tree1.obj","tree3",-37,0,-24);
+Obj("sstmixbiggrass1.obj","biggrass1",-35,0,-24);
+Obj("tree1.obj","tree4",-37,0,24);
+Obj("sstmixbiggrass1.obj","biggrass1",-35,0,24);
+Obj("tree1.obj","tree5",-37,0,36);
+Obj("sstmixbiggrass1.obj","biggrass1",-35,0,36);
+
+//BRIDGE
+
+Obj("stonebridge.obj","bridge1",-24,0,59);
+Obj("stonebridge.obj","bridge2",25,0,35);
+
+//RIVER
+
+Obj("sstcrossroad1.obj","cross1",-36,0,48);
+
+Obj("sstriver1.obj","river1",-36,0,59);
+Obj("sstriver1.obj","river1",-24,0,59);
+Obj("sstriver1.obj","river1",-12,0,59);
+Obj("sstriver1.obj","river1",0,0,59);
+Obj("sstriver1.obj","river1",12,0,59);
+Obj("sstriver1.obj","river1",12,0,47);
+Obj("sstriver1.obj","river1",12,0,35);
+Obj("sstriver1.obj","river1",24,0,35);
+Obj("sstriver1.obj","river1",36,0,35);
+Obj("sstriver1.obj","river1",48,0,35);
+Obj("sstriver1.obj","river1",60,0,35);
+
+//ALONG-THE-RIVER
+
+Obj("sstcrossroad1.obj","cross1",-36,0,72);
+Obj("sstcrossroad1.obj","cross1",-24,0,72);
+Obj("sstcrossroad1.obj","cross1",-12,0,72);
+Obj("sstcrossroad1.obj","cross1",0,0,72);
+Obj("sstcrossroad1.obj","cross1",12,0,72);
+Obj("sstcrossroad1.obj","cross1",24,0,72);
+Obj("sstcrossroad1.obj","cross1",32,0,72);
+Obj("sstcrossroad1.obj","cross1",44,0,72);
+Obj("sstcrossroad1.obj","cross1",56,0,72);
+
+Obj("sstmixbiggrass1.obj","biggrass1",-35,0,84);
+Obj("sstmixbiggrass1.obj","biggrass1",-23,0,84);
+Obj("sstmixbiggrass1.obj","biggrass1",-11,0,84);
+Obj("sstmixbiggrass1.obj","biggrass1",1,0,84);
+Obj("sstmixbiggrass1.obj","biggrass1",13,0,84);
+Obj("sstmixbiggrass1.obj","biggrass1",25,0,84);
+Obj("sstmixbiggrass1.obj","biggrass1",37,0,84);
+Obj("sstmixbiggrass1.obj","biggrass1",49,0,84);
+Obj("sstmixbiggrass1.obj","biggrass1",61,0,84);
+
+Obj("sstmixbiggrass1.obj","biggrass1",-35,0,96);
+Obj("sstmixbiggrass1.obj","biggrass1",-23,0,96);
+Obj("sstmixbiggrass1.obj","biggrass1",-11,0,96);
+Obj("sstmixbiggrass1.obj","biggrass1",1,0,96);
+Obj("sstmixbiggrass1.obj","biggrass1",13,0,96);
+Obj("sstmixbiggrass1.obj","biggrass1",25,0,96);
+Obj("sstmixbiggrass1.obj","biggrass1",37,0,96);
+Obj("sstmixbiggrass1.obj","biggrass1",49,0,96);
+Obj("sstmixbiggrass1.obj","biggrass1",61,0,96);
+
+
+//TREES-SENSOUJI
+Obj("sstcrossroad1.obj","cross1",24,0,48);
+Obj("sstcrossroad1.obj","cross1",24,0,60);
+Obj("tree1.obj","tree6",36,0,59);
+Obj("tree1.obj","tree7",36,0,47);
+Obj("sstmixbiggrass1.obj","biggrass1",36,0,60);
+Obj("sstmixbiggrass1.obj","biggrass1",36,0,48);
+Obj("sstmixbiggrass1.obj","biggrass1",48,0,60);
+Obj("sstmixbiggrass1.obj","biggrass1",48,0,48);
+Obj("sstmixbiggrass1.obj","biggrass1",60,0,60);
+Obj("sstmixbiggrass1.obj","biggrass1",60,0,48);
+
+
+
+//NEW-HOUSE-RED-BLUE-LEFT
+Obj("new_House_red1.obj","housered1",-34,0,95);
+Obj("new_House_blue1.obj","houseblue1",-12,0,95);
+
+//SENSOUJI
+//vars["SS_SDC"]=30;
+//vars["SS"]=Obj("Senouzi.obj","sensouji1",22,11,95);
+
+//NEW-HOUSE-RED-BLUE-RIGHT
+Obj("new_House_red1.obj","housered2",60,0,95);
+Obj("new_House_blue1.obj","houseblue2",60,0,70);
+
+//SKYTREE
+Obj("skytree3.obj","skytree1",60,0,50);
+
+//HIGHTOWER-A-B
+Obj("Hightower_A.obj","hightower3",60,0,20);
+Obj("Hightower_B.obj","hightower4",60,0,0);
+Obj("Hightower_A.obj","hightower5",60,0,-20);
+Obj("Hightower_B.obj","hightower6",40,0,20);
+Obj("Hightower_A.obj","hightower7",40,0,0);
+Obj("Hightower_B.obj","hightower8",40,0,-20);
+
+Obj("sstmixbiggrass1.obj","biggrass1",60,0,24);
+Obj("sstmixbiggrass1.obj","biggrass1",48,0,24);
+Obj("sstmixbiggrass1.obj","biggrass1",36,0,24);
+
+Obj("sstmixbiggrass1.obj","biggrass1",60,0,12);
+Obj("sstmixbiggrass1.obj","biggrass1",48,0,12);
+Obj("sstmixbiggrass1.obj","biggrass1",36,0,12);
+
+Obj("sstmixbiggrass1.obj","biggrass1",60,0,0);
+Obj("sstmixbiggrass1.obj","biggrass1",48,0,0);
+Obj("sstmixbiggrass1.obj","biggrass1",36,0,0);
+
+Obj("sstmixbiggrass1.obj","biggrass1",60,0,-12);
+Obj("sstmixbiggrass1.obj","biggrass1",48,0,-12);
+Obj("sstmixbiggrass1.obj","biggrass1",36,0,-12);
+
+Obj("sstmixbiggrass1.obj","biggrass1",60,0,-24);
+Obj("sstmixbiggrass1.obj","biggrass1",48,0,-24);
+Obj("sstmixbiggrass1.obj","biggrass1",36,0,-24);
+
+an("road2",0,90,0);
+
+//Space travel
+function big_asteroid(name,x,y,z,color) {
+    qb(name,x,y,z);
+    qb(name,x-1,y,z);
+    qb(name,x,y-1,z);
+    qb(name,x,y,z-1);
+    qb(name,x+1,y,z);
+    qb(name,x,y+1,z);
+    qb(name,x,y,z+1);
+    cl(name, color);
+}
+//Asteroids
+//big_asteroid("Asteroid0",7,7,7, Color.red);
+//big_asteroid("Asteroid1",-7,-7,-7, Color.blue);
+//big_asteroid("Asteroid2",14,14,14, Color.green);
+//big_asteroid("Asteroid3",-14,-14,-14, Color.yellow);
+
+
+
+//Time Lord diversifyer
+if(parseInt(System.DateTime.Now.ToString("hh")) > 18) {
+  SetSkyStarryNight();
+}else{
+  SetSkyNone();
+}
+
+vars["TT_SDC"]=30;
+vars["dragon_head"]=Obj("DragonHead5.obj","dragon_head",0,0,0);
+vars["dragon_head"].transform.Rotate(0,180,0);
+for(var i=0;i<6;i++){ 
+  vars["dragon_body"+i]=Obj("DragonTrunk2.obj","dragon_body"+i,0,-5,-13*(i+1));
+  vars["dragon_body"+i].transform.Rotate(0,180,0);
+  //adding parent child relationship to be able to scale based on just one scale to retain same ratio
+  if(i==0){
+    vars["dragon_body0"].transform.parent=vars["dragon_head"].transform;
+  }
+else{
+    vars["dragon_body"+i].transform.parent=vars["dragon_head"].transform;
+  }
+}
+//vars["TokyoTower"]=Obj("TokyoTower3.obj","TT",0,0,20);
+vars["dragon_tail"]=Obj("DragonTail.obj","dragon_tail",0,0,-13*8);
+vars["dragon_tail"].transform.Rotate(0,180,0);
+vars["dragon_tail"].transform.parent=vars["dragon_head"].transform;
+function sc_(name : String, x : float, y : float, z : float) {//name: String, x,y,z
+    //Scale a cube
+	//example
+	//Declarations
+	//qb("myRectangle",10,10,10);sc("myRectangle",100,10,10);
+    for (cube in cubes) {//this for loop doesnt behave as the regular browser one which woudl return the index, it acutally returns the object
+    	if(cube.transform.name==name) cube.transform.localScale = Vector3(x,y,z);
+	}
+}
+vars["dragon_y_max"]=vars["dragon_head"].transform.position.y+1;
+vars["dragon_y_min"]=vars["dragon_head"].transform.position.y-1;
+vars["rad"]=0;
+
+//===========================================
+sc_("dragon_head",0.1,0.1,0.1);
+class breath{
+ var x=0;
+ var y=0;
+ var z=0;
+ function breath(){
+ }
+ function breath(name:String,x_:float,y_:float ,z_:float ){
+  var x=x_;
+  var y=y_;
+  var z=z_;   vars[name]=qb(name+"_",vars["BreathOrigine"].transform.position.x,vars["BreathOrigine"].transform.position.y,vars["BreathOrigine"].transform.position.z);
+ }
+}
+vars["breath_"]=new breath();
+vars["breathCount"]=0;
+vars["time"]=0;
+vars["BreathOrigine"]=qb("BreathOrigine",vars["dragon_head"].transform.position.x,vars["dragon_head"].transform.position.y,vars["dragon_head"].transform.position.z+10);
+vars["BreathOrigine"].transform.parent=vars["dragon_head"].transform;
+cl("BreathOrigine",new Color(0,0,0,0));
+vars["TTHP"]=10;
+vars["TTBreak"]=false;

@@ -1,0 +1,189 @@
+mv("dragon_head",0,0,-Input.GetAxisRaw("Vertical")*10);
+rt("dragon_head",0,Input.GetAxisRaw("Horizontal")*40,0);
+sp("camera",vars["dragon_head"].gameObject.transform.position.x-1,vars["dragon_head"].transform.position.y+12,vars["dragon_head"].transform.position.z-30);
+debugString=vars["dragon_head"].transform.eulerAngles.y.ToString();
+if(Input.GetKey(KeyCode.Space)){
+    mv("dragon_head",0,3,0);
+}
+if(Input.GetKey(KeyCode.LeftShift)){
+    mv("dragon_head",0,-3,0);
+}
+for(var i=0;i<6;i++){
+    vars["dragon_body"+i].transform.Translate(0,Mathf.Sin(vars["rad"]-(i*Mathf.PI/7))/15,0);
+}
+//Pが押されたとき
+if (Input.GetKey(KeyCode.P)) {
+    debugString = vars["time"].ToString();
+    //0.1秒ごとに処理
+    if (vars["time"] >= 0.1) {
+        debugString = "herez2";
+        //ブレスの最初のボクセルのとき
+        if (vars["breathCount"] == 0) {
+            vars["Fire" + vars["breathCount"]] = qb("fire" + vars["breathCount"], vars["BreathOrigine"].transform.position.x, vars["BreathOrigine"].transform.position.y, vars["BreathOrigine"].transform.position.z);
+            var x = UnityEngine.Random.Range(0, 2);
+            debugString = "herez3";
+            //xが1以下の時
+            if (x < 1) {
+                cl("fire" + vars["breathCount"], new Color32(246, 243, 55,255));
+                //Xが1以上の時
+            } else {
+                cl("fire" + vars["breathCount"], new Color32(173, 78, 26, 255));
+            }
+            debugString = "herez4";
+
+            vars["breathCount"] = vars["breathCount"] + 1;
+            //ブレスのボクセルが2個目以降の時
+        } else {
+            for (var k = 0; k < vars["breathCount"]; k++) {
+                vars["Fire" + k.ToString()].transform.Translate(-Mathf.Sin(Mathf.Deg2Rad * (vars["dragon_head"].transform.eulerAngles.y)), 0, -Mathf.Cos(Mathf.Deg2Rad * (vars["dragon_head"].transform.eulerAngles.y)));
+                debugString = "fire" + k.ToString();
+                
+                //SHAKE TOKYO TOWER
+                if (cd("fire" + k.ToString(), "TT")) {
+                  if(vars["TT_SDC"]>=0) {
+                    vars["TT_SDC"]=vars["TT_SDC"]-1;
+                  }
+                  //Shaking things up when hit
+                  mv("TT",Mathf.Round(3*UnityEngine.Random.Range(-1,2)),0,0);
+                  an("TT",Mathf.Round(3*UnityEngine.Random.Range(-1,2)),0,0);
+                }
+                //END
+                
+                 //SHAKE SENSOUJI
+                if (cd("fire" + k.ToString(), "SS")) {
+                  if(vars["SS_SDC"]>=0) {
+                    vars["SS_SDC"]=vars["SS_SDC"]-1;
+                  }
+                  //Shaking things up when hit
+                  mv("SS",Mathf.Round(3*UnityEngine.Random.Range(-1,2)),0,0);
+                  an("SS",Mathf.Round(3*UnityEngine.Random.Range(-1,2)),0,0);
+                }
+                //END
+                
+                //SHAKE HOUSE 1
+                if (cd("fire" + k.ToString(), "H1")) {
+                  if(vars["H1_SDC"]>=0) {
+                    vars["H1_SDC"]=vars["H1_SDC"]-1;
+                  }
+                  //Shaking things up when hit
+                  mv("H1",Mathf.Round(3*UnityEngine.Random.Range(-1,2)),0,0);
+                  an("H1",Mathf.Round(3*UnityEngine.Random.Range(-1,2)),0,0);
+                }
+                //END
+                
+                //SHAKE HIGH TOWER
+                if (cd("fire" + k.ToString(), "HT")) {
+                  if(vars["HT_SDC"]>=0) {
+                    vars["HT_SDC"]=vars["HT_SDC"]-1;
+                  }
+                  //Shaking things up when hit
+                  mv("HT",Mathf.Round(3*UnityEngine.Random.Range(-1,2)),0,0);
+                  an("HT",Mathf.Round(3*UnityEngine.Random.Range(-1,2)),0,0);
+                }
+                //END
+                
+                
+                
+                if (ex("fire" + vars["breathCount"])) {
+                    dl("fire" + vars["breathCount"]);
+                }
+                vars["Fire" + vars["breathCount"]] = qb("fire" + vars["breathCount"], vars["BreathOrigine"].transform.position.x + (4 * Mathf.Sin(vars["breathCount"] % 8 * 2 * Mathf.PI / 8)), vars["BreathOrigine"].transform.position.y, vars["BreathOrigine"].transform.position.z);
+                debugString = "herez6";
+                var y = UnityEngine.Random.Range(0, 2);
+                if (y < 1) {
+                    cl("fire" + vars["breathCount"], new Color32(246, 243, 55, 255));
+                } else {
+                    cl("fire" + vars["breathCount"], new Color32(173, 78, 26, 255));
+                }
+            }
+            //二週目ここまで
+            
+            debugString = "herez6";
+            vars["breathCount"] = vars["breathCount"] + 1;
+            if (vars["breathCount"] >= 50) {
+                vars["breathCount"] = 0;
+            }
+            
+            debugString = "herez7";
+            vars["time"] = 0;
+        }//0.1秒たっていたときここまで
+    }
+    vars["time"] += Time.deltaTime;
+        
+    //debugString = "herez8";
+
+}//Pが押されていたときここまで
+else {
+    for (var l = 0; l < vars["breathCount"]; l++) {
+        vars["Fire" + l.ToString()].transform.Translate(-Mathf.Sin(Mathf.Deg2Rad * (vars["dragon_head"].transform.eulerAngles.y)), 0, -Mathf.Cos(Mathf.Deg2Rad * (vars["dragon_head"].transform.eulerAngles.y)));
+    }
+}
+vars["rad"]=vars["rad"]+0.3;
+
+
+//DESTROY FOR ALL
+var xx;
+
+//DESTROY TOKYO TOWER
+if(vars["TT_SDC"]<=0) {
+	vars["TT_SDC"]=vars["TT_SDC"]-1;
+	//explosion
+	for(xx=0; xx< vars["TokyoTower"].gameObject.transform.childCount; xx++) {
+		vars["myobj"] = vars["TokyoTower"].gameObject.transform.GetChild(xx);
+		vars["myobj"].gameObject.transform.Translate(UnityEngine.Random.Range(-7.0f,7.0),UnityEngine.Random.Range(-7.0f,7.0),UnityEngine.Random.Range(-7.0f,7.0));
+		debugString = vars["TT_SDC"].ToString();
+		if(vars["TT_SDC"]<-20) {
+			dl("TT");
+			//UnityEngine.Object.Destroy(vars["myobj"].gameObject);
+		}
+	}
+}
+//END
+
+//DESTROY SENSOUJI
+if(vars["SS_SDC"]<=0) {
+	vars["SS_SDC"]=vars["SS_SDC"]-1;
+	//explosion
+	for(xx=0; xx< vars["Sen"].gameObject.transform.childCount; xx++) {
+		vars["myobj"] = vars["Sen"].gameObject.transform.GetChild(xx);
+		vars["myobj"].gameObject.transform.Translate(UnityEngine.Random.Range(-7.0f,7.0),UnityEngine.Random.Range(-7.0f,7.0),UnityEngine.Random.Range(-7.0f,7.0));
+		debugString = vars["SS_SDC"].ToString();
+		if(vars["SS_SDC"]<-20) {
+			dl("SS");
+			//UnityEngine.Object.Destroy(vars["myobj"].gameObject);
+		}
+	}
+}
+//END
+
+//DESTROY HOUSE 1
+if(vars["H1_SDC"]<=0) {
+	vars["H1_SDC"]=vars["H1_SDC"]-1;
+	//explosion
+	for(xx=0; xx< vars["Hou"].gameObject.transform.childCount; xx++) {
+		vars["myobj"] = vars["Hou"].gameObject.transform.GetChild(xx);
+		vars["myobj"].gameObject.transform.Translate(UnityEngine.Random.Range(-7.0f,7.0),UnityEngine.Random.Range(-7.0f,7.0),UnityEngine.Random.Range(-7.0f,7.0));
+		debugString = vars["H1_SDC"].ToString();
+		if(vars["H1_SDC"]<-20) {
+			dl("H1");
+			//UnityEngine.Object.Destroy(vars["myobj"].gameObject);
+		}
+	}
+}
+//END
+
+//DESTROY HIGH TOWER
+if(vars["HT_SDC"]<=0) {
+	vars["HT_SDC"]=vars["HT_SDC"]-1;
+	//explosion
+	for(xx=0; xx< vars["Hig"].gameObject.transform.childCount; xx++) {
+		vars["myobj"] = vars["Hig"].gameObject.transform.GetChild(xx);
+		vars["myobj"].gameObject.transform.Translate(UnityEngine.Random.Range(-7.0f,7.0),UnityEngine.Random.Range(-7.0f,7.0),UnityEngine.Random.Range(-7.0f,7.0));
+		debugString = vars["HT_SDC"].ToString();
+		if(vars["HT_SDC"]<-20) {
+			dl("HT");
+			//UnityEngine.Object.Destroy(vars["myobj"].gameObject);
+		}
+	}
+}
+//END
