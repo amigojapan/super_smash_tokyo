@@ -1,0 +1,30 @@
+Obj("sst_TokyoTower4.obj","tower",0,0,0);
+Obj("sstmixbiggrass1.obj","biggrass1",0,0,0);
+Obj("sstmixbiggrass1.obj","biggrass1",12,0,0);
+Obj("sstmixbiggrass1.obj","biggrass1",12,0,12);
+Obj("sstmixbiggrass1.obj","biggrass1",12,0,-12);
+Obj("sstmixbiggrass1.obj","biggrass1",-12,0,0);
+Obj("sstmixbiggrass1.obj","biggrass1",-12,0,-12);
+Obj("sstmixbiggrass1.obj","biggrass1",0,0,12);
+Obj("sstmixbiggrass1.obj","biggrass1",0,0,-12);
+Obj("sstmixbiggrass1.obj","biggrass1",-12,0,12);
+
+
+
+//Space travel
+function big_asteroid(name,x,y,z,color) {
+    qb(name,x,y,z);
+    qb(name,x-1,y,z);
+    qb(name,x,y-1,z);
+    qb(name,x,y,z-1);
+    qb(name,x+1,y,z);
+    qb(name,x,y+1,z);
+    qb(name,x,y,z+1);
+    cl(name, color);
+}
+//Asteroids
+//big_asteroid("Asteroid0",7,7,7, Color.red);
+//big_asteroid("Asteroid1",-7,-7,-7, Color.blue);
+//big_asteroid("Asteroid2",14,14,14, Color.green);
+//big_asteroid("Asteroid3",-14,-14,-14, Color.yellow);
+

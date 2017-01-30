@@ -1,0 +1,28 @@
+//Use arrow keys and [A] and [Z] and Space
+if (Input.GetKey (KeyCode.RightArrow))
+    rt("camera",0,100,0);
+if (Input.GetKey (KeyCode.LeftArrow))
+    rt("camera",0,-100,0);
+if (Input.GetKey (KeyCode.DownArrow))
+    rt("camera",100,0,0);
+if (Input.GetKey (KeyCode.UpArrow))
+    rt("camera",-100,0,0);
+if (Input.GetKey (KeyCode.A))
+    mv("camera",0,0,10);
+if (Input.GetKey (KeyCode.Z))
+    mv("camera",0,0,-10);
+if (Input.GetKey (KeyCode.Space)) {
+    qb("bullet",0,0,0);
+    eq("bullet","camera");//sets the bullet rotation and location to the same as the camera
+}
+if (ex("bullet")) {
+   mv("bullet",0,0,10);
+}
+if(cd("bullet","Asteroid0")) 
+    dl("Asteroid0");
+if(cd("bullet","Asteroid1")) 
+    dl("Asteroid1");
+if(cd("bullet","Asteroid2")) 
+    dl("Asteroid2");
+if(cd("bullet","Asteroid3")) 
+    dl("Asteroid3");
